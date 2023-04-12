@@ -6,7 +6,7 @@
 #Email        : raul.mendez@isglobal.org
 #Description  : Download google sheet from isglobal drive
 #Creation Date: 09-02-2023
-#Last Modified: Fri 10 Feb 2023 01:28:02 PM CET
+#Last Modified: Thu 16 Feb 2023 03:40:39 PM CET
 ###################################################################
 
 # Load the local rclone
@@ -24,7 +24,7 @@ fi
 # Folder when the file will be downloaded
 FOLDER=/PROJECTES/ADAPTATION/core/code/health/download/
 # Full path of the file
-FILE=$FOLDER/"Dataset_Periodic_Updates.xlsx"
+FILE=$FOLDER/"Population_NumberRegions.xlsx"
  
 cd $FOLDER || exit
 
@@ -37,8 +37,9 @@ fi
 
 echo "Download the map file"
 
-rclone copy isglobal:"/maps/Dataset Periodic Updates.xlsx" .
-find . -name "Dataset Periodic Updates.xlsx" -type f | while read -r file; do mv "$file" "$(echo "$file" | tr ' ' _)"; done
+rclone copy isglobal:"/maps/Population_NumberRegions.xlsx" .
+
+# find . -name "Dataset Periodic Updates.xlsx" -type f | while read -r file; do mv "$file" "$(echo "$file" | tr ' ' _)"; done
 
 
 if [[ ! -f "${FILE}" ]];
