@@ -6,13 +6,14 @@
 #Email        : raul.mendez@isglobal.org
 #Description  : Download google sheet from isglobal drive
 #Creation Date: 09-02-2023
-#Last Modified: Thu 16 Feb 2023 03:40:39 PM CET
+#Last Modified: Wed 12 Apr 2023 03:07:22 PM CEST
 ###################################################################
 
 # Load the local rclone
 # I need to download a newer version of rclone to use the google api
 # I have the binary in my home directory
 export PATH=$PATH:$HOME/bin/
+FILENAME="Population_NumberRegions.xlsx"
 
 # Check if rclone exits if not exit with error code
 if ! command -v rclone &> /dev/null
@@ -24,7 +25,7 @@ fi
 # Folder when the file will be downloaded
 FOLDER=/PROJECTES/ADAPTATION/core/code/health/download/
 # Full path of the file
-FILE=$FOLDER/"Population_NumberRegions.xlsx"
+FILE=$FOLDER/$FILENAME
  
 cd $FOLDER || exit
 
@@ -37,7 +38,7 @@ fi
 
 echo "Download the map file"
 
-rclone copy isglobal:"/maps/Population_NumberRegions.xlsx" .
+rclone copy isglobal:"/maps/$FILENAME" .
 
 # find . -name "Dataset Periodic Updates.xlsx" -type f | while read -r file; do mv "$file" "$(echo "$file" | tr ' ' _)"; done
 
