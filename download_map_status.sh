@@ -6,7 +6,7 @@
 #Email        : raul.mendez@isglobal.org
 #Description  : Download google sheet from isglobal drive
 #Creation Date: 09-02-2023
-#Last Modified: Wed 12 Apr 2023 03:07:22 PM CEST
+#Last Modified: Wed 12 Apr 2023 03:23:22 PM CEST
 ###################################################################
 
 # Load the local rclone
@@ -39,9 +39,6 @@ fi
 echo "Download the map file"
 
 rclone copy isglobal:"/maps/$FILENAME" .
-
-# find . -name "Dataset Periodic Updates.xlsx" -type f | while read -r file; do mv "$file" "$(echo "$file" | tr ' ' _)"; done
-
 
 if [[ ! -f "${FILE}" ]];
 then
