@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# Test local repo push
-
 ###################################################################
 #File Name    : download_map_status.sh
 #Author       : Raul Mendez
 #Email        : raul.mendez@isglobal.org
 #Description  : Download google sheet from isglobal drive
 #Creation Date: 09-02-2023
-#Last Modified: Wed 12 Apr 2023 03:23:22 PM CEST
+#Last Modified: Thu 13 Apr 2023 01:02:24 PM CEST
 ###################################################################
 
 # Load the local rclone
