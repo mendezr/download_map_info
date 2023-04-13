@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Test local repo push
+
 ###################################################################
 #File Name    : download_map_status.sh
 #Author       : Raul Mendez
