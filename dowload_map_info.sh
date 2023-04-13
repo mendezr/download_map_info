@@ -6,7 +6,7 @@
 #Email        : raul.mendez@isglobal.org
 #Description  : Download google sheet from isglobal drive
 #Creation Date: 09-02-2023
-#Last Modified: Thu 13 Apr 2023 01:02:24 PM CEST
+#Last Modified: Thu 13 Apr 2023 01:07:58 PM CEST
 ###################################################################
 
 # Load the local rclone
@@ -38,6 +38,8 @@ fi
 
 echo "Download the map file"
 
+# copy the Population_NumberRegions.xlsx from the drive, I configure the server
+# as `isglobal`
 rclone copy isglobal:"/maps/$FILENAME" .
 
 if [[ ! -f "${FILE}" ]];
